@@ -1,0 +1,1 @@
+// app.js -> router -> controller -> view(home)
