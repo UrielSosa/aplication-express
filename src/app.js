@@ -7,6 +7,9 @@ app.set('view engine', 'ejs');
 app.set('views', path.resolve(__dirname, 'views'));
 app.use(express.static(path.resolve(__dirname,'../public')));
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }))
+
 /* routes */
 const main = require('./routes/main');
 app.use('/', main);

@@ -22,7 +22,7 @@ let controller = {
     },
     search: (req, res) => {
         let productsSearch = products.filter(product => {
-            return product.name == req.query.keywords;
+            return product.name == req.body.keywords;
         })
         res.render('home', {productos: productsSearch});
     }
