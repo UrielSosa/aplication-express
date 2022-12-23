@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const dbConnect = require('./config/mongo');
 
 /* Configuración express */
 app.set("view engine", "ejs");
@@ -20,5 +21,7 @@ app.use("/products", products);
 app.use((req, res, next) => {
     res.render("404-page");
 });
+
+dbConnect();
 
 app.listen(3000, () => console.log("Servidor corriendo en el puerto 3000"));
